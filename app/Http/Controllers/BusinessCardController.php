@@ -60,22 +60,7 @@ class BusinessCardController extends Controller
         Business_Card::create($formFields);
         return redirect('/')->with('message', 'Biz Card created successfully !');
     }
-    public function generateAndStoreQrCode()
-    {
-        $storagePath = 'public/qr'; // Path within the "public" disk
 
-        $qrCodeImage = QrCode::size(200)
-            ->style('dot')
-            ->eye('circle')
-            ->color(0, 0, 255)
-            ->margin(1)
-            ->generate('test');
-
-        $uniqueFileName = uniqid('qrcode_') . '.png';
-        $storedPath = Storage::putFileAs($storagePath, $qrCodeImage, $uniqueFileName);
-
-        return $storedPath;
-    }
     /**
      * Display the specified resource.
      *
@@ -100,7 +85,7 @@ class BusinessCardController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     *P
      * @param  \App\Http\Requests\UpdateBusiness_CardRequest  $request
      * @param  \App\Models\Business_Card  $business_Card
      * @return \Illuminate\Http\Response
@@ -118,6 +103,15 @@ class BusinessCardController extends Controller
      */
     public function destroy(Business_Card $business_Card)
     {
-        //
+        if ($business_Card->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+        $business_Card->delete();
+        return redirect('/')->with('message', 'Listing deleted succesfully !');
+    }
+
+    public function manage()
+    {
+        return view('bizcards.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }

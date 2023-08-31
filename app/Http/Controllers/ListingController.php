@@ -103,6 +103,7 @@ class ListingController extends Controller
     // Manage Listing
     public function manage()
     {
-        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
+        dd(auth()->user()->bizcards()->get());
+        return view('listings.manage', ['listings' => auth()->user()->bizcard()->get()]);
     }
 }
