@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,7 +34,7 @@
                     <span class="font-bold upper-case">Welcome {{ auth()->user()->name }}</span>
                 </li>
                 <li>
-                    <a href="/bizcard/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                         Manage Listings</a>
                 </li>
                 <li>

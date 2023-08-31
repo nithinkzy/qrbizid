@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BusinessCardController;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,22 +17,7 @@ use App\Http\Controllers\ListingController;
 */
 
 // All Listings
-Route::get('/', [BusinessCardController::class, 'index']);
-
-// Show Create Business Card Form
-Route::get('/bizcard/create', [BusinessCardController::class, 'create'])->middleware('auth');
-
-// Store Listing Data
-Route::post('/bizcard', [BusinessCardController::class, 'store'])->middleware('auth');
-
-//Delete listing
-
-// Manage Listings
-Route::get('/bizcard/manage', [BusinessCardController::class, 'manage'])->middleware('auth');
-Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
-
-// Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/', [ListingController::class, 'index']);
 
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
@@ -48,11 +32,10 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->midd
 Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
 
 //Delete listing
-Route::delete('/bizcard/{bizcard}', [BusinessCardController::class, 'destroy'])->middleware('auth');
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 // Manage Listings
-Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+Route::get('/listings/manage',[ListingController::class,'manage'])->middleware('auth');
 
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
