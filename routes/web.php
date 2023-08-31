@@ -17,7 +17,22 @@ use App\Http\Controllers\ListingController;
 */
 
 // All Listings
-Route::get('/', [ListingController::class, 'index']);
+Route::get('/', [BusinessCardController::class, 'index']);
+
+// Show Create Business Card Form
+Route::get('/bizcard/create', [BusinessCardController::class, 'create'])->middleware('auth');
+
+// Store Listing Data
+Route::post('/bizcard', [BusinessCardController::class, 'store'])->middleware('auth');
+
+//Delete listing
+
+// Manage Listings
+Route::get('/bizcard/manage', [BusinessCardController::class, 'manage'])->middleware('auth');
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
+// Single Listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
@@ -35,7 +50,7 @@ Route::put('/listings/{listing}', [ListingController::class, 'update'])->middlew
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 // Manage Listings
-Route::get('/listings/manage',[ListingController::class,'manage'])->middleware('auth');
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
 
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
