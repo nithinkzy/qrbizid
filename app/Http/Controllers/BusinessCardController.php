@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business_Card;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\QrCodeController;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Requests\StoreBusiness_CardRequest;
 use App\Http\Requests\UpdateBusiness_CardRequest;
 
@@ -17,7 +20,7 @@ class BusinessCardController extends Controller
     {
         // dd(request()->tag);
         return view('bizcards.index', [
-            'listings'  => Business_Card::paginate(1)
+            'listings'  => Business_Card::paginate(4)
         ]);
     }
 
@@ -51,13 +54,28 @@ class BusinessCardController extends Controller
             $formFields['document'] = $request->file('document')->store('document', 'public');
         }
 
+        $formFields['qr'] = QrCodeController::generateAndStore('test');
         $formFields['user_id'] = auth()->id();
 
         Business_Card::create($formFields);
         return redirect('/')->with('message', 'Biz Card created successfully !');
-        // dd($request->all());
     }
+    public function generateAndStoreQrCode()
+    {
+        $storagePath = 'public/qr'; // Path within the "public" disk
 
+        $qrCodeImage = QrCode::size(200)
+            ->style('dot')
+            ->eye('circle')
+            ->color(0, 0, 255)
+            ->margin(1)
+            ->generate('test');
+
+        $uniqueFileName = uniqid('qrcode_') . '.png';
+        $storedPath = Storage::putFileAs($storagePath, $qrCodeImage, $uniqueFileName);
+
+        return $storedPath;
+    }
     /**
      * Display the specified resource.
      *

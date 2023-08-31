@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('youtube');
             $table->string('pinterest');
             $table->timestamp('date_of_entry');
+            $table->string('qr')->nullable();
             $table->string('logo')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('document')->nullable();

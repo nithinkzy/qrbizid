@@ -27,6 +27,7 @@ class Business_Card extends Model
         'youtube',
         'pinterest',
         'date_of_entry',
+        'qr',
         'logo',
         'profile_picture',
         'document',
