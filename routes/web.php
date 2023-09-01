@@ -36,7 +36,7 @@ Route::put('/bizcard/{business_Card}', [BusinessCardController::class, 'update']
 Route::delete('/bizcard/{business_Card}', [BusinessCardController::class, 'destroy'])->middleware('auth');
 
 // Manage Listings
-Route::get('/bizcard/manage', [BusinessCardController::class, 'manage'])->middleware('auth');
+Route::get('/my-account', [BusinessCardController::class, 'manage'])->middleware('auth');
 
 // Single Listing
 Route::get('/bizcard/{business_Card}', [BusinessCardController::class, 'show']);
