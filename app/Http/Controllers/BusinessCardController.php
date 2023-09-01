@@ -20,7 +20,7 @@ class BusinessCardController extends Controller
     public function index()
     {
         // dd(request()->tag);
-        return view('bizcards.index', [
+        return view('landing.home', [
             'listings'  => Business_Card::latest()->paginate(4)
         ]);
     }

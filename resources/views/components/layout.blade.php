@@ -2,75 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="canonical" href="https://https://demo.themesberg.com/landwind/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landwind - Tailwind CSS Landing Page Demo</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#ef3b2d",
-                    },
-                },
-            },
-        };
-    </script>
-    <title>LaraGigs | Find Laravel Jobs & Projects</title>
+    <!-- Meta SEO -->
+    <meta name="title" content="Landwind - Tailwind CSS Landing Page">
+    <meta name="description"
+        content="Get started with a free and open-source landing page built with Tailwind CSS and the Flowbite component library.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Themesberg">
+
+    <!-- Social media share -->
+    <meta property="og:title" content=Landwind - Tailwind CSS Landing Page>
+    <meta property="og:site_name" content=Themesberg>
+    <meta property="og:url" content=https://https://demo.themesberg.com/landwind />
+    <meta property="og:description" content=Get started with a free and open-source landing page for Tailwind CSS built
+        with the Flowbite component library featuring dark mode, hero sections, pricing cards, and more.>
+    <meta property="og:type" content="">
+    <meta property="og:image" content=https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@themesberg" />
+    <meta name="twitter:creator" content="@themesberg" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="./output.css" rel="stylesheet">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
-<body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
-        <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /></a>
-        <ul class="flex space-x-6 mr-6 text-lg">
-            @auth
-                <li>
-                    <span class="font-bold upper-case">Welcome {{ auth()->user()->name }}</span>
-                </li>
-                <li>
-                    <a href="/bizcard/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
-                        Manage Listings</a>
-                </li>
-                <li>
-                    <form action="/logout" method="post" class="inline">
-                        @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i> Logout
-                        </button>
-                    </form>
-                </li>
-            @else
-                <li>
-                    <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
-                </li>
-                <li>
-                    <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a>
-                </li>
-            @endauth
-        </ul>
-    </nav>
-    <main>
-        {{-- @yield('content') --}}
-        {{ $slot }}
-    </main>
-
-    <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-        <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
-
-        <a href="/bizcard/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
-    </footer>
-    <x-flash-message />
+<body>
+    @include('partials._header')
+    {{ $slot }}
+    @include('partials._footer')
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
 
 </html>
