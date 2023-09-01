@@ -1,5 +1,5 @@
  <!-- Start block -->
- <section class="bg-white dark:bg-gray-900">
+ <section id="pricing" class="bg-white dark:bg-gray-900">
      <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
          <div class="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
              <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Affordable Plans
@@ -15,8 +15,8 @@
                  <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Start Networking Digitally with
                      Our Free Plan</p>
                  <div class="flex items-baseline justify-center my-8">
-                     <span class="mr-2 text-5xl font-extrabold">$0</span>
-                     <span class="text-gray-500 dark:text-gray-400">/month</span>
+                     <span class="mr-2 text-5xl font-extrabold">FREE</span>
+                     {{-- <span class="text-gray-500 dark:text-gray-400">/month</span> --}}
                  </div>
                  <!-- List -->
                  <ul role="list" class="mb-8 space-y-4 text-left">
@@ -144,7 +144,7 @@
                                  clip-rule="evenodd"></path>
                          </svg>
                          <span><span class="font-semibold">Priority support</span> for your bespoke digital
-                             networking needs24 months</span>
+                             networking needs</span>
                      </li>
                  </ul>
                  <a href="#"

@@ -1,4 +1,4 @@
-<section class="bg-gray-50 dark:bg-gray-800">
+<section id="features" class="bg-gray-50 dark:bg-gray-800">
     <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
         <!-- Row -->
         <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
@@ -47,12 +47,14 @@
                 <p class="mb-8 font-light lg:text-xl">Transform your business information into an
                     attention-grabbing QR card with just a few clicks.</p>
             </div>
-            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-1.png"
+            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+                src="https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                 alt="dashboard feature image">
         </div>
         <!-- Row -->
         <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/feature-2.png"
+            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+                src="https://images.unsplash.com/photo-1682072155213-856c2ab9d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80"
                 alt="feature image 2">
             <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Scan, See,

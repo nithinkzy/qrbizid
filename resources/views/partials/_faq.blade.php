@@ -1,5 +1,5 @@
      <!-- Start block -->
-     <section class="bg-white dark:bg-gray-900">
+     <section id="faq" class="bg-white dark:bg-gray-900">
          <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
              <h2
                  class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white">
@@ -98,9 +98,13 @@
                      </div>
                  </div>
                  <p class="mt-10 text-center font-light text-gray-500 sm:text-xl dark:text-gray-400">Feel free to reach
-                     out if you
+                     out at <a class="underline hover:underline-offset-2"
+                         href="mailto:support@qrbizid.com?subject=Support Request&body=Hi%20[Customer's%20Name],%0A%0AI%20need%20assistance%20with%20[briefly%20describe%20the%20issue].%0A%0AThank%20you.">
+                         Contact Support
+                     </a>
+                     , if you
                      have
-                     any additional questions not covered here.</p>
+                     any additional questions.</p>
              </div>
          </div>
      </section>
