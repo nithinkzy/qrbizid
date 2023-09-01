@@ -97,6 +97,7 @@ class ListingController extends Controller
             abort(403, 'Unauthorized Action');
         }
         $listing->delete();
+
         return redirect('/')->with('message', 'Listing deleted succesfully !');
     }
 
@@ -104,6 +105,6 @@ class ListingController extends Controller
     public function manage()
     {
         dd(auth()->user()->bizcards()->get());
-        return view('listings.manage', ['listings' => auth()->user()->bizcard()->get()]);
+        return view('listings.manage', ['listings' => auth()->user()->bizcards()->get()]);
     }
 }

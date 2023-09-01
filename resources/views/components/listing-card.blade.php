@@ -1,7 +1,7 @@
 @props(['listing'])
 <div class="flex flex-col">
 
-    <x-card class="bg-black w-[512px] h-[300px] mb-3">
+    <x-card id="{{ $listing->id }}" class="bg-black w-[512px] h-[300px] mb-3">
         <div class="flex flex-row justify-between">
             <div class="basis-1/2">
                 <div class="flex flex-row mb-6">
@@ -35,8 +35,9 @@
         <button class="text-black-500">
             <i class="fa-solid fa-id-card"></i> Biz card
         </button>
-        <button class="text-black-500">
-            <i class="fa-solid fa-download"></i> Download
+        <button class="text-black-500 download-btn" data-section="{{ $listing->id }}"
+            data-business="{{ $listing->your_name . '-' . $listing->business_name }}">
+            <i class="fa-solid fa-download"></i> Download as PNG
         </button>
         <button class="text-black-500">
             <i class="fa-solid fa-pen-to-square"></i> Edit
@@ -49,3 +50,21 @@
         </form>
     </div>
 </div>
+<script>
+    document.querySelectorAll('.download-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const sectionId = button.getAttribute('data-section');
+            const businessName = button.getAttribute('data-business');
+            const sectionElement = document.getElementById(sectionId);
+
+            html2canvas(sectionElement).then(canvas => {
+                const imageDataURL = canvas.toDataURL('image/png');
+
+                const downloadLink = document.createElement('a');
+                downloadLink.href = imageDataURL;
+                downloadLink.download = businessName + '.png';
+                downloadLink.click();
+            });
+        });
+    });
+</script>

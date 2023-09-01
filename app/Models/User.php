@@ -48,4 +48,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Listing::class, 'user_id');
     }
+    public function bizcards()
+    {
+        return $this->hasMany(Business_Card::class, 'user_id');
+    }
 }

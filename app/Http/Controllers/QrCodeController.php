@@ -8,8 +8,10 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class QrCodeController extends Controller
 {
-    public static function generateAndStore($url)
+    public static function generateAndStore($bizCardId)
+
     {
+        $bizCardId = "https://qrbizid/" . $bizCardId;
         $filename = uniqid('qrcode_') . '.svg';
         $qrFolder = 'qr_codes/';
         $storagePath = 'app/public/' . $qrFolder . $filename;
@@ -19,7 +21,7 @@ class QrCodeController extends Controller
             ->eye('circle')
             ->color(0, 0, 255)
             ->margin(1)
-            ->generate($url, storage_path(str_replace('/', DIRECTORY_SEPARATOR, $storagePath)));
+            ->generate($bizCardId, storage_path(str_replace('/', DIRECTORY_SEPARATOR, $storagePath)));
 
         return $filePath;
     }
