@@ -8,7 +8,7 @@
         </header>
 
         <div class="flex justify-end mb-10">
-            <a href="/bizcard/create"
+            <a href="/create"
                 class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                 {{ count($listings) < 5 ? 'Create New' : 'Limit Reached' }}
             </a>
@@ -18,7 +18,19 @@
             @unless ($listings->isEmpty())
                 @foreach ($listings as $listing)
                     <div class="hover:scale-105 transition-all">
-
+                        <div class="flex flex-row justify-evenly gap-5 mb-[-20px] ">
+                            <form action="/bizcard/{{ $listing->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button
+                                    class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-red-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-red-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-red-700 hover:scale-105 transition-all">
+                                    <i class="fa-solid fa-trash"></i> Remove</button>
+                            </form>
+                            <a href="/edit/{{ $listing->id }}"
+                                class=" inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 hover:scale-105 transition-all">
+                                <i class="fa-solid fa-pen-to-square"></i> Edit
+                            </a>
+                        </div>
                         <a href="/bizcard/{{ $listing->id }}">
                             <div class="w-[512px] h-[300px]">
                                 <x-card class="bg-black  mb-3">
@@ -53,25 +65,22 @@
                                 </x-card>
                             </div>
                         </a>
-                        <div class="flex justify-evenly">
-                            <a href="/bizcard/{{ $listing->id }}" class="text-black-500 hover:scale-105 transition-all">
+                        <div class="flex justify-evenly mt-4">
+                            <button class="text-white hover:scale-105 transition-all">
+                                <i class="fa-solid fa-qrcode"></i> Download QR
+                            </button>
+                            <button class="text-white hover:scale-105 transition-all">
+                                <i class="fa-solid fa-id-card"></i> Download Biz ID
+                            </button>
+                            {{-- <a href="/bizcard/{{ $listing->id }}" class="text-white hover:scale-105 transition-all">
                                 <i class="fa-solid fa-id-card"></i> Save
                             </a>
 
-                            <button class="text-black-500 hover:scale-105 transition-all">
+                            <button class="text-white hover:scale-105 transition-all">
                                 <i class="fa-solid fa-download"></i> Business card
-                            </button>
+                            </button> --}}
 
-                            <a href="/bizcard/{{ $listing->id }}/edit"
-                                class="text-black-500 hover:scale-105 transition-all">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit
-                            </a>
-                            <form action="/bizcard/{{ $listing->id }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="text-red-500 hover:scale-105 transition-all">
-                                    <i class="fa-solid fa-trash"></i> Delete</button>
-                            </form>
+
                         </div>
                     </div>
                 @endforeach

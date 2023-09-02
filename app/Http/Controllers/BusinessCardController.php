@@ -85,9 +85,9 @@ class BusinessCardController extends Controller
             // Update the qr field in the Business_Card record
             $businessCard->update(['qr' => $qrFilePath]);
 
-            return redirect('/')->with('message', 'Biz Card created successfully !');
+            return redirect('/my-account')->with('message', 'Biz Card created successfully !');
         } else {
-            return redirect('/bizcard/manage')->with('message', 'You have reached the maximum limit of business cards.');
+            return redirect('/my-account')->with('message', 'You have reached the maximum limit of business cards.');
         }
     }
 
@@ -154,7 +154,7 @@ class BusinessCardController extends Controller
         }
 
         $business_Card->update($formFields);
-        return back()->with('message', 'Biz Card updated successfully !');
+        return redirect('/my-account')->with('message', 'Biz Card updated successfully !');
         // dd($request->all());
     }
 
@@ -170,7 +170,7 @@ class BusinessCardController extends Controller
             abort(403, 'Unauthorized Action');
         }
         $business_Card->delete();
-        return redirect('/')->with('message', 'Listing deleted succesfully !');
+        return redirect('/my-account')->with('message', 'Listing deleted succesfully !');
     }
 
     public function manage()

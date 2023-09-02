@@ -21,13 +21,13 @@ use App\Http\Controllers\ListingController;
 Route::get('/', [BusinessCardController::class, 'index']);
 
 // Show Create Business Card Form
-Route::get('/bizcard/create', [BusinessCardController::class, 'create'])->middleware('auth');
+Route::get('/create', [BusinessCardController::class, 'create'])->middleware('auth');
 
 // Store Listing Data
 Route::post('/bizcard', [BusinessCardController::class, 'store'])->middleware('auth');
 
 //Show Edit Form
-Route::get('/bizcard/{business_Card}/edit', [BusinessCardController::class, 'edit'])->middleware('auth');
+Route::get('/edit/{business_Card}', [BusinessCardController::class, 'edit'])->middleware('auth');
 
 //Update listing
 Route::put('/bizcard/{business_Card}', [BusinessCardController::class, 'update'])->middleware('auth');
