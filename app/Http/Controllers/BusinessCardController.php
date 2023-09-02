@@ -90,8 +90,11 @@ class BusinessCardController extends Controller
             return redirect('/my-account')->with('message', 'You have reached the maximum limit of business cards.');
         }
     }
+    public function generateAndStoreQrCode()
+    {
+        $storagePath = 'public/qr'; // Path within the "public" disk
 
-
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -105,7 +108,7 @@ class BusinessCardController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *P
+     *
      * @param  \App\Http\Requests\UpdateBusiness_CardRequest  $request
      * @param  \App\Models\Business_Card  $business_Card
      * @return \Illuminate\Http\Response
