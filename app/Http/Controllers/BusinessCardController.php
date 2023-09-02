@@ -207,4 +207,15 @@ class BusinessCardController extends Controller
 
         return $response;
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Business_Card  $business_Card
+     * @return \Illuminate\Http\Response
+     */
+    public function download(Business_Card $business_Card)
+    {
+        return view('bizcards.download', ['listing' => $business_Card]);
+    }
 }

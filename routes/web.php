@@ -29,6 +29,9 @@ Route::post('/bizcard', [BusinessCardController::class, 'store'])->middleware('a
 //Show Edit Form
 Route::get('/edit/{business_Card}', [BusinessCardController::class, 'edit'])->middleware('auth');
 
+//Show Download Form
+Route::get('/download/{business_Card}', [BusinessCardController::class, 'download'])->middleware('auth');
+
 //Update listing
 Route::put('/bizcard/{business_Card}', [BusinessCardController::class, 'update'])->middleware('auth');
 
