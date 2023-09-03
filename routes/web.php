@@ -31,6 +31,7 @@ Route::get('/edit/{business_Card}', [BusinessCardController::class, 'edit'])->mi
 
 //Show Download Form
 Route::get('/download/{business_Card}', [BusinessCardController::class, 'download'])->middleware('auth');
+Route::get('/download/card/{business_Card}', [BusinessCardController::class, 'downloadCard'])->middleware('auth');
 
 //Update listing
 Route::put('/bizcard/{business_Card}', [BusinessCardController::class, 'update'])->middleware('auth');

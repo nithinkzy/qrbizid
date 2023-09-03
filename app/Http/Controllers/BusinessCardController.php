@@ -221,4 +221,15 @@ class BusinessCardController extends Controller
     {
         return view('bizcards.download', ['listing' => $business_Card]);
     }
+
+    /**
+     * Download page for card
+     *
+     * @param  \App\Models\Business_Card  $business_Card
+     * @return \Illuminate\Http\Response
+     */
+    public function downloadCard(Business_Card $business_Card)
+    {
+        return view('bizcards.download-card', ['listing' => $business_Card]);
+    }
 }
