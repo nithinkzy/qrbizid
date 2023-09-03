@@ -13,44 +13,14 @@
                 {{ count($listings) < 5 ? 'Create New' : 'Limit Reached' }}
             </a>
         </div>
-        <div class="grid grid-cols-1
-        grid-rows-4 gap-10 lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 mb-20">
+        <div
+            class="grid grid-cols-1 grid-rows-4 space-y-10 lg:px-2 lg:space-y-0 lg:space-x-2 lg:grid-cols-2 lg:grid-rows-2 lg:gap-2 mb-20">
             @unless ($listings->isEmpty())
                 @foreach ($listings as $listing)
-                    <div class="hover:scale-105 transition-all">
-                        <a href="/bizcard/{{ $listing->id }}">
-                            <div class="w-[512px] h-[300px]">
-                                <x-card class="bg-black  mb-3">
-                                    <div class="flex flex-row justify-between">
-                                        <div class="basis-1/2">
-                                            <div class="flex flex-row mb-6">
-                                                <img class="w-48 mr-6 md:block  md:h-10 md:w-10 md:rounded-full"
-                                                    src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
-                                                    alt="" />
-                                                <div>
-                                                    <p class="text-lg text-bold">{{ $listing->business_name }}</p>
-                                                    <p class="text-base">{{ $listing->tagline }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="mb-5">
-                                                <p class="text-lg text-semibold">{{ $listing->your_name }}</p>
-                                                <p class="text-base">{{ $listing->job_title }}</p>
-                                            </div>
-                                            <div class="text-sm">
-                                                <p>{{ $listing->phone }}</p>
-                                                <p>{{ $listing->email }}</p>
-                                                <p>{{ $listing->website }}</p>
-                                            </div>
+                    <div class="flex flex-col">
 
-                                        </div>
-                                        <div class="basis-1/2">
-                                            <img class="ms-auto md:block"
-                                                src="{{ $listing->qr ? asset('storage/' . $listing->qr) : asset('/images/no-image.png') }}"
-                                                alt="" />
-                                        </div>
-                                    </div>
-                                </x-card>
-                            </div>
+                        <a class="hover:scale-105 transition-all" href="/bizcard/{{ $listing->id }}">
+                            <x-biz-card :listing="$listing" />
                         </a>
                         <div class="flex justify-evenly mt-4">
                             <a href="/edit/{{ $listing->id }}"
@@ -69,16 +39,6 @@
                                     class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-red-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-red-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-red-700 hover:scale-105 transition-all">
                                     <i class="fa-solid fa-trash me-2"></i> Remove</button>
                             </form>
-
-                            {{-- <a href="/bizcard/{{ $listing->id }}" class="text-white hover:scale-105 transition-all">
-                                <i class="fa-solid fa-id-card"></i> Save
-                            </a>
-
-                            <button class="text-white hover:scale-105 transition-all">
-                                <i class="fa-solid fa-download"></i> Business card
-                            </button> --}}
-
-
                         </div>
                     </div>
                 @endforeach
@@ -86,7 +46,4 @@
         @else
             <p class="text-center">No Listings Found</p>
         @endunless
-
-    </div>
-
 </x-layout>
