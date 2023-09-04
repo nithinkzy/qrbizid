@@ -71,13 +71,12 @@
                 </div>
                 <div class="flex flex-col items-center space-y-3">
 
-                    <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-                        src="https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                        alt="dashboard feature image">
-                    <a href="card/{{ $listing->id }}"
-                        class="w-2/4  text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                    <x-biz-card :listing="$listing" />
+                    <button id="download-card-button"
+                        class="w-2/4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
                         Download
-                    </a>
+                    </button>
+
                 </div>
             </div>
             <!-- Row -->
@@ -154,4 +153,32 @@
             </div>
         </div>
     </div>
+    <x-download-card :listing="$listing" />
+
 </x-layout>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the download button and biz card div
+        var downloadButton = document.getElementById('download-card-button');
+        var downloadCardDiv = document.getElementById('biz-card');
+
+        // Add a click event listener to the download button
+        downloadButton.addEventListener('click', function() {
+            downloadCardDiv.style.display = 'grid';
+            // Use html2canvas to capture the #biz-card div as an image
+            html2canvas(downloadCardDiv).then(function(canvas) {
+                // Convert the canvas to a data URL
+                var imageDataURL = canvas.toDataURL('image/png');
+
+                // Create a temporary anchor element to trigger the download
+                var downloadLink = document.createElement('a');
+                downloadLink.href = imageDataURL;
+                downloadLink.download = 'biz-card.png';
+                downloadLink.click();
+                downloadCardDiv.style.display = 'none';
+            });
+        });
+    });
+</script>
