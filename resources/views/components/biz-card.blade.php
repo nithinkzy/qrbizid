@@ -1,7 +1,7 @@
 @props(['listing'])
 <div
     class="grid grid-cols-2 items-stretch
-    w-full h-fit lg:w-[512px] lg:h-[300px]
+    w-full max-w-[512px] h-fit lg:w-[512px] lg:h-[300px]
     p-3 lg:p-6 text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white bg-black  ">
     <div class="flex flex-col justify-evenly">
         <div class="flex gap-3 items-center mb-2 lg:mb-5" id="logo-section">

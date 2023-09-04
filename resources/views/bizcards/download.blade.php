@@ -1,15 +1,37 @@
 <x-layout>
     <div class="pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
-        <header>
+        <header class="text-center">
             <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                Download Your Biz Cards
+                Download Your Custom Biz Cards
             </h1>
+
+
         </header>
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
-            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+            <div class="flex flex-col items-center justify-center  gap-8">
+                <img class="h-4/5"
+                    src="{{ $listing->qr ? asset('storage/' . $listing->qr) : asset('/images/no-image.png') }}"
+                    alt="{{ $listing->business_name }} QR Code" />
+
+                <a download="{{ $listing->business_name }}_qr.svg"
+                    href="{{ $listing->qr ? asset('storage/' . $listing->qr) : asset('/images/no-image.png') }}"
+                    class="w-1/5 text-center text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                    Download QR
+                </a>
+
+            </div>
+            <hr>
+            <div class="my-5 text-center">
+                <p class="mb-4 font-light text-gray-500 sm:text-lg dark:text-gray-400"> Or choose the layout that suits
+                    your
+                    needs.</p>
+            </div>
+            <!-- Row -->
+            <!-- Row -->
+            <div class="items-center flex flex-col-reverse gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Get Your
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">1. Get Your
                         Digital Business Card in Card Format</h2>
                     <p class="mb-8 font-light lg:text-xl">Share Your Contact Information Seamlessly</p>
                     <!-- List -->
@@ -80,21 +102,17 @@
                 </div>
             </div>
             <!-- Row -->
-            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+            <div class="items-center flex flex-col gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="flex flex-col items-center space-y-3">
-
                     <x-portrait-card :listing="$listing" />
-
-                    {{-- <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-                        src="https://images.unsplash.com/photo-1682072155213-856c2ab9d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80"
-                        alt="feature image 2"> --}}
                     <button id="download-portrait-card-button"
                         class="w-2/4  text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
                         Download
                     </button>
                 </div>
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Download Your
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">2. Download
+                        Your
                         Digital Business Card in Portrait Layout</h2>
                     <p class="mb-8 font-light lg:text-xl">Expand Your Networking Possibilities</p>
                     <!-- List -->
@@ -148,7 +166,8 @@
                             </span>
                         </li>
                     </ul>
-                    <p class="font-light lg:text-xl">The portrait layout is designed for versatile use. It's perfect for
+                    <p class="font-light lg:text-xl">The portrait layout is designed for versatile use. It's perfect
+                        for
                         printing and sticking on various surfaces or for quickly sharing your contact details digitally.
                         It's a convenient way to expand your networking possibilities.</p>
                 </div>
