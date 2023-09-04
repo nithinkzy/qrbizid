@@ -26,6 +26,7 @@ class StoreBusiness_CardRequest extends FormRequest
     {
         return [
             'business_name' => 'required',
+            'business_category' => '',
             'tagline' => '',
             'your_name' => 'required',
             'job_title' => 'required',

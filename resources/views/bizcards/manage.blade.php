@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
+    <div class="h-screen pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
 
         <header>
             <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -13,9 +13,9 @@
                 {{ count($listings) < 5 ? 'Create New' : 'Limit Reached' }}
             </a>
         </div>
-        <div
-            class="grid grid-cols-1 grid-rows-4 space-y-10 lg:px-2 lg:space-y-0 lg:space-x-2 lg:grid-cols-2 lg:grid-rows-2 lg:gap-2 mb-20">
-            @unless ($listings->isEmpty())
+        @unless ($listings->isEmpty())
+            <div
+                class="grid grid-cols-1 grid-rows-4 space-y-10 lg:px-2 lg:space-y-0 lg:space-x-2 lg:grid-cols-2 lg:grid-rows-2 lg:gap-2 mb-20">
                 @foreach ($listings as $listing)
                     <div class="flex flex-col">
 
@@ -44,6 +44,9 @@
                 @endforeach
             </div>
         @else
-            <p class="text-center">No Listings Found</p>
+            <div class=" font-light text-gray-500 text-2xl dark:text-gray-400 text-center">
+                <p>Take action now to improve your business reach:</p>
+            </div>
         @endunless
+    </div>
 </x-layout>

@@ -28,6 +28,7 @@ class UpdateBusiness_CardRequest extends FormRequest
             'business_name' => 'required',
             'tagline' => '',
             'your_name' => 'required',
+            'business_category' => '',
             'job_title' => 'required',
             'phone' => 'required',
             'email' => 'required|email',

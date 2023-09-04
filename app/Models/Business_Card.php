@@ -14,6 +14,7 @@ class Business_Card extends Model
         'user_id',
         'business_name',
         'tagline',
+        'business_category',
         'your_name',
         'job_title',
         'phone',

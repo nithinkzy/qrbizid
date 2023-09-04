@@ -48,6 +48,37 @@
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="mb-6">
+                        <label for="business-category" class="inline-block text-lg mb-2">Select Business
+                            Category:</label>
+                        <select id="business-category" name="business_category"
+                            class="text-black font-semibold border border-gray-200 rounded p-2 w-full">
+                            <option value="Art & Design">Art & Design</option>
+                            <option value="Automotive & Transportation">Automotive & Transportation</option>
+                            <option value="Beauty & Wellness">Beauty & Wellness</option>
+                            <option value="Construction & Home Improvement">Construction & Home Improvement</option>
+                            <option value="Education & Training">Education & Training</option>
+                            <option value="Entertainment & Events">Entertainment & Events</option>
+                            <option value="Finance & Insurance">Finance & Insurance</option>
+                            <option value="Food & Beverage">Food & Beverage</option>
+                            <option value="Healthcare & Medical">Healthcare & Medical</option>
+                            <option value="Hospitality & Tourism">Hospitality & Tourism</option>
+                            <option value="Information Technology & Software">Information Technology & Software</option>
+                            <option value="Marketing & Advertising">Marketing & Advertising</option>
+                            <option value="Nonprofit & Social Services">Nonprofit & Social Services</option>
+                            <option value="Personal Services">Personal Services</option>
+                            <option value="Professional & Business Services">Professional & Business Services</option>
+                            <option value="Real Estate & Property">Real Estate & Property</option>
+                            <option value="Retail & Shopping">Retail & Shopping</option>
+                            <option value="Sports & Fitness">Sports & Fitness</option>
+                            <option value="Travel & Leisure">Travel & Leisure</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        @error('business_category')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
                     <div class="mb-6">
                         <label for="website" class="inline-block text-lg mb-2">
@@ -105,8 +136,8 @@
                     <div class="mb-6">
                         <label for="your_name" class="inline-block text-lg mb-2">Your Full Name</label>
                         <input value="{{ old('your_name') }}"type="text"
-                            class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="your_name"
-                            placeholder="" />
+                            class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            name="your_name" placeholder="" />
                         @error('your_name')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
@@ -115,8 +146,8 @@
                     <div class="mb-6">
                         <label for="job_title" class="inline-block text-lg mb-2">Job Title</label>
                         <input value="{{ old('job_title') }}"type="text"
-                            class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="job_title"
-                            placeholder="" />
+                            class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            name="job_title" placeholder="" />
                         @error('job_title')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror

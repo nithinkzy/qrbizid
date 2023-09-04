@@ -4,8 +4,6 @@
             <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                 Download Your Custom Biz Cards
             </h1>
-
-
         </header>
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
