@@ -147,9 +147,9 @@
                              networking needs</span>
                      </li>
                  </ul>
-                 <a href="#"
-                     class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Get
-                     in touch for a personalized quote and consultation</a>
+                 <a href="mailto:support@qrbizid.com"
+                     class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Contact
+                     : support@qrbizid.com</a>
              </div>
 
          </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\Business_Card;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -76,11 +77,13 @@ class BusinessCardController extends Controller
                 $formFields['document'] = $request->file('document')->store('document', 'public');
             }
             $formFields['user_id'] = $user_id;
+            $unique_id = Str::uuid();
+            $formFields['unique_id'] = $unique_id;
             // Create a new Business_Card record
             $businessCard = Business_Card::create($formFields);
 
             // Generate and store QR code using the created Business_Card's ID
-            $qrFilePath = QrCodeController::generateAndStore($businessCard->id);
+            $qrFilePath = QrCodeController::generateAndStore($unique_id);
 
             // Update the qr field in the Business_Card record
             $businessCard->update(['qr' => $qrFilePath]);

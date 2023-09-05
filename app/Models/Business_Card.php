@@ -12,6 +12,7 @@ class Business_Card extends Model
 
     protected $fillable = [
         'user_id',
+        'unique_id',
         'business_name',
         'tagline',
         'business_category',

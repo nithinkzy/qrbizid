@@ -47,8 +47,10 @@
                 <p class="mb-8 font-light lg:text-xl">Transform your business information into an
                     attention-grabbing QR card with just a few clicks.</p>
             </div>
-            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+            {{-- <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
                 src="https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="dashboard feature image"> --}}
+            <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="{{ asset('/images/form.png') }} "
                 alt="dashboard feature image">
         </div>
         <!-- Row -->

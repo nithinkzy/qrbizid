@@ -1,18 +1,18 @@
 <footer class="w-full relative bottom-0 left-0 right-0 bg-white dark:bg-gray-800">
-    <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
+    <div class="max-w-screen-xl p-4 pb-6 mx-auto lg:pb-16 md:p-8 lg:p-10">
 
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
         <div class="text-center">
             <a href="#"
                 class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
-                <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" alt="QrBizID Logo" />
+                {{-- <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" alt="QrBizID Logo" /> --}}
                 QrBizID
             </a>
             <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2023 QrBizID. All
                 Rights Reserved. Product of <a href="https://web-wrapper.com"
                     class="text-purple-600 hover:underline dark:text-purple-500">Web-wrapper</a>
             </span>
-            <ul class="flex justify-center mt-5 space-x-5">
+            {{-- <ul class="flex justify-center mt-5 space-x-5">
                 <li>
                     <a href="#"
                         class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
@@ -62,7 +62,7 @@
                         </svg>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </footer>

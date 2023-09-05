@@ -32,7 +32,7 @@ class UserController extends Controller
         // Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and Logged in');
+        return redirect('/my-account')->with('message', 'User created and Logged in');
     }
 
     public function logout(Request $request)

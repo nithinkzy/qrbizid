@@ -25,15 +25,15 @@ class StoreBusiness_CardRequest extends FormRequest
     public function rules()
     {
         return [
-            'business_name' => 'required',
+            'business_name' => '',
             'business_category' => '',
             'tagline' => '',
             'your_name' => 'required',
-            'job_title' => 'required',
-            'phone' => 'required',
-            'email' => 'required|email', Rule::unique('business_card', 'email'),
+            'job_title' => '',
+            'phone' => '',
+            'email' => '',
             'website' => '',
-            'physical_address' => 'required',
+            'physical_address' => '',
             'linkedin' => '',
             'twitter' => '',
             'facebook' => '',
