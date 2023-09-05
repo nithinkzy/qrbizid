@@ -33,9 +33,9 @@
     p-12 text-gray-900 bg-white border border-gray-100 mx-auto">
     <div>
 
-        <img class="mx-auto block h-24 w-24 rounded-full mb-3"
-            src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
-            alt="" />
+        @if ($listing->logo)
+            <img class="mx-auto block h-24 w-24 rounded-full mb-3" src="{{ $listing->logo }}" alt="" />
+        @endif
         <div class="" id="company-name">
             <p class="text-4xl text-bold">{{ $listing->business_name }}</p>
             <p class="text-3xl">{{ $listing->tagline }}</p>

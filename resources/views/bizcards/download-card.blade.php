@@ -5,9 +5,11 @@
     p-12 text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 dark:bg-gray-800 dark:text-white bg-black  ">
     <div class="flex flex-col justify-evenly">
         <div class="flex gap-3 items-center mb-5" id="logo-section">
-            <img class="block h-24 w-24 rounded-full"
-                src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
-                alt="" />
+            @if ($listing->logo)
+                <img class="block h-24 w-24 rounded-full"
+                    src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
+                    alt="" />
+            @endif
             <div class="grid grid-rows-2" id="company-name">
                 <p class="text-4xl text-bold">{{ $listing->business_name }}</p>
                 <p class="text-3xl">{{ $listing->tagline }}</p>

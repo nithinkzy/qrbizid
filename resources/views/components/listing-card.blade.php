@@ -5,9 +5,13 @@
         <div class="flex flex-row justify-between">
             <div class="basis-1/2">
                 <div class="flex flex-row mb-6">
-                    <img class="w-48 mr-6 md:block  md:h-10 md:w-10 md:rounded-full"
-                        src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
-                        alt="" />
+                    @if ($listing->logo)
+                        {
+                        <img class="w-48 mr-6 md:block  md:h-10 md:w-10 md:rounded-full"
+                            src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
+                            alt="" />
+                        }
+                    @endif
                     <div>
                         <p class="text-lg text-bold">{{ $listing->business_name }}</p>
                         <p class="text-base">{{ $listing->tagline }}</p>

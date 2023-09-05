@@ -41,8 +41,10 @@
                         <p class="text-xs bg-white px-1">{{ $listing->business_name }}</p>
                         <p class="text-xs bg-white px-1 mt-1">{{ $listing->tagline }}</p>
                     </div>
-                    <img src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('/images/no-image.png') }}"
-                        alt="" class="p-3 rounder-lg bg-blend-hard-light" height="88" width="88">
+                    @if ($listing->logo)
+                        <img src="{{ $listing->logo }}" alt="" class="p-3 rounder-lg bg-blend-hard-light"
+                            height="88" width="88">
+                    @endif
                 </div>
             </div>
             <div id="main" class="text-left">
