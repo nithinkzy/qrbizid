@@ -1,8 +1,11 @@
 <x-layout>
     <div class="h-screen pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
 
-        <header>
-            <h1 class="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        <header class="text-center  font-bold tracking-tight text-gray-900 dark:text-white">
+            <p class="mb-8 text-2xl">
+                Namaste 🙏🏽, <span class="text-font-extrabold upper-case">{{ auth()->user()->name }}</span>
+            </p>
+            <h1 class="mb-5 text-3xl">
                 Manage Your Biz Cards
             </h1>
         </header>
