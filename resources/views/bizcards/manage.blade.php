@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<x-layout>
-    <x-card class=" p-10 ">
-        <header>
-            <h1 class="text-3xl text-center font-bold my-6 uppercase">
-                Manage Gigs
-=======
 @php
     $meta = [
         'title' => 'My Account - QrBizID',
@@ -22,7 +15,6 @@
             </p>
             <h1 class="mb-5 text-3xl">
                 Manage Your Biz Cards
->>>>>>> from_old
             </h1>
         </header>
 
