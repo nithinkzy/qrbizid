@@ -32,7 +32,7 @@ class UserController extends Controller
         // Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and Logged in');
+        return redirect('/my-account')->with('message', 'User created and Logged in');
     }
 
     public function logout(Request $request)
@@ -59,7 +59,7 @@ class UserController extends Controller
 
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-            return redirect('/')->with('message', 'You are now logged in');
+            return redirect('/my-account')->with('message', 'You are now logged in');
         }
 
         return back()->withErrors((['email' => "Invalid Credentials"]))->onlyInput('email');

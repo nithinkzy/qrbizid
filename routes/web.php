@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\BusinessCardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,40 +21,29 @@ use App\Http\Controllers\ListingController;
 Route::get('/', [BusinessCardController::class, 'index']);
 
 // Show Create Business Card Form
-Route::get('/bizcard/create', [BusinessCardController::class, 'create'])->middleware('auth');
+Route::get('/create', [BusinessCardController::class, 'create'])->middleware('auth');
 
 // Store Listing Data
 Route::post('/bizcard', [BusinessCardController::class, 'store'])->middleware('auth');
 
-//Delete listing
-
-// Manage Listings
-Route::get('/bizcard/manage', [BusinessCardController::class, 'manage'])->middleware('auth');
-Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
-
-// Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-// Show Create Form
-Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
-
-// Store Listing Data
-Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
-
 //Show Edit Form
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
+Route::get('/edit/{business_Card}', [BusinessCardController::class, 'edit'])->middleware('auth');
+
+//Show Download Form
+Route::get('/download/{business_Card}', [BusinessCardController::class, 'download'])->middleware('auth');
+Route::get('/download/card/{business_Card}', [BusinessCardController::class, 'downloadCard'])->middleware('auth');
 
 //Update listing
-Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
+Route::put('/bizcard/{business_Card}', [BusinessCardController::class, 'update'])->middleware('auth');
 
 //Delete listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 // Manage Listings
-Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+Route::get('/my-account', [BusinessCardController::class, 'manage'])->middleware('auth');
 
 // Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/bizcard/{unique_id}', [BusinessCardController::class, 'show']);
 
 // Show register create form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
@@ -69,3 +59,5 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+Route::get('/download-vcard/{business_Card}', [BusinessCardController::class, 'downloadVCard'])->name('download.vcard');

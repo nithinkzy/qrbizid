@@ -97,6 +97,7 @@ class ListingController extends Controller
             abort(403, 'Unauthorized Action');
         }
         $listing->delete();
+
         return redirect('/')->with('message', 'Listing deleted succesfully !');
     }
 
