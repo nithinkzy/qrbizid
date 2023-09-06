@@ -33,6 +33,5 @@
             src="{{ $listing->qr ? asset('storage/' . $listing->qr) : asset('/images/no-image.png') }}"
             alt="" />
         <span class="realtive bottom-0 text-[7px] text-end ">Powered by QrBizID</span>
-
     </div>
 </div>
