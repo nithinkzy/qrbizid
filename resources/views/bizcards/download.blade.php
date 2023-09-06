@@ -93,6 +93,7 @@
 
                     <x-biz-card :listing="$listing" />
                     <button id="download-card-button"
+                        data-name="{{ $listing->business_name . '-' . $listing->your_name . '_card' }}"
                         class="w-2/4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
                         Download
                     </button>
@@ -103,6 +104,7 @@
             <div class="items-center flex flex-col gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="flex flex-col items-center space-y-3">
                     <x-portrait-card :listing="$listing" />
+                    data-name="{{ $listing->business_name . '-' . $listing->your_name . '_portrait' }}"
                     <button id="download-portrait-card-button"
                         class="w-2/4  text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
                         Download
@@ -191,33 +193,33 @@
             html2canvas(downloadCardDiv).then(function(canvas) {
                 // Convert the canvas to a data URL
                 var imageDataURL = canvas.toDataURL('image/png');
-
+                var fileName = downloadButton.getAttribute('data-name') + '.png';
                 // Create a temporary anchor element to trigger the download
                 var downloadLink = document.createElement('a');
                 downloadLink.href = imageDataURL;
-                downloadLink.download = 'biz-card.png';
+                downloadLink.download = fileName
                 downloadLink.click();
                 downloadCardDiv.style.display = 'none';
             });
         });
 
-        var downloadButton = document.getElementById('download-portrait-card-button');
-        var downloadCardDiv = document.getElementById('portrait-biz-card');
+        var downloadPortraitButton = document.getElementById('download-portrait-card-button');
+        var downloadPortraitDiv = document.getElementById('portrait-biz-card');
 
         // Add a click event listener to the download button
-        downloadButton.addEventListener('click', function() {
-            downloadCardDiv.style.display = 'grid';
+        downloadPortraitButton.addEventListener('click', function() {
+            downloadPortraitDiv.style.display = 'grid';
             // Use html2canvas to capture the #biz-card div as an image
-            html2canvas(downloadCardDiv).then(function(canvas) {
+            html2canvas(downloadPortraitDiv).then(function(canvas) {
                 // Convert the canvas to a data URL
                 var imageDataURL = canvas.toDataURL('image/png');
-
+                var fileName = downloadButton.getAttribute('data-name') + '.png';
                 // Create a temporary anchor element to trigger the download
                 var downloadLink = document.createElement('a');
                 downloadLink.href = imageDataURL;
-                downloadLink.download = 'biz-card.png';
+                downloadLink.download = fileName
                 downloadLink.click();
-                downloadCardDiv.style.display = 'none';
+                downloadPortraitDiv.style.display = 'none';
             });
         });
     });
