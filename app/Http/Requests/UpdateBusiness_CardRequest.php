@@ -25,15 +25,15 @@ class UpdateBusiness_CardRequest extends FormRequest
     public function rules()
     {
         return [
-            'business_name' => 'required',
+            'business_name' => '',
             'tagline' => '',
             'your_name' => 'required',
             'business_category' => '',
-            'job_title' => 'required',
-            'phone' => 'required',
-            'email' => 'required|email',
+            'job_title' => '',
+            'phone' => '',
+            'email' => '',
             'website' => '',
-            'physical_address' => 'required',
+            'physical_address' => '',
             'linkedin' => '',
             'twitter' => '',
             'facebook' => '',
