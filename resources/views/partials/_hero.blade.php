@@ -26,7 +26,7 @@
                 @endauth
             </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rotate-3 drop-shadow-lg">
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rotate-3 drop-shadow-lg z-0">
             <img src="{{ asset('/images/card.png') }}" alt="hero image">
         </div>
     </div>

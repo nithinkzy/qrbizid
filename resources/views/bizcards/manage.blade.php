@@ -7,7 +7,7 @@
 <x-layout :meta="$meta">
 
 
-    <div class="h-screen pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
+    <div class=" pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
 
         <header class="text-center  font-bold tracking-tight text-gray-900 dark:text-white">
             <p class="mb-8 text-2xl">
@@ -26,7 +26,7 @@
         </div>
         @unless ($listings->isEmpty())
             <div
-                class="grid grid-cols-1 grid-rows-4 space-y-10 lg:px-2 lg:space-y-0 lg:space-x-2 lg:grid-cols-2 lg:grid-rows-2 lg:gap-2 mb-20">
+                class="grid grid-cols-1 grid-rows-4 space-y-10 lg:px-2 lg:space-y-0 lg:space-x-2 lg:grid-cols-2 lg:grid-rows-2 lg:gap-8 mb-20">
                 @foreach ($listings as $listing)
                     <div class="flex flex-col">
 
