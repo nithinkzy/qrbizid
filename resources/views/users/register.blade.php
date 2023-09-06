@@ -1,4 +1,10 @@
-<x-layout>
+@php
+    $meta = [
+        'title' => 'Register for QrBizID',
+        'description' => 'Join QrBizID today and unlock exclusive benefits for your business. Create and manage digital business cards with ease.',
+    ];
+@endphp
+<x-layout :meta="$meta">
     <main class="h-screen flex-grow flex items-center justify-center flex-col bg-white dark:bg-gray-900 ">
 
         <x-card class=" p-10 rounded ">

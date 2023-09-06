@@ -1,4 +1,12 @@
-<x-layout>
+@php
+    $meta = [
+        'title' => 'QrBizID - Empower Your Online Presence with QR',
+        'description' => 'Create and manage digital business cards, share contact details instantly with QR codes, and boost your business reach with QrBizID.',
+    ];
+@endphp
+
+<x-layout :meta="$meta">
+
     @include('partials._hero')
     @include('partials._search')
     <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">

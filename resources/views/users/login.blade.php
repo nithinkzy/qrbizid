@@ -1,4 +1,10 @@
-<x-layout>
+@php
+    $meta = [
+        'title' => 'Login to QrBizID',
+        'description' => 'Login to your QrBizID account to access your business cards and manage your online presence.',
+    ];
+@endphp
+<x-layout :meta="$meta">
     <!-- Centered Login Section -->
     <main class="h-screen flex-grow flex items-center justify-center flex-col bg-white dark:bg-gray-900 ">
         <x-card class="p-10 rounded">

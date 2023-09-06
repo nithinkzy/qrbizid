@@ -1,4 +1,10 @@
-<x-layout>
+@php
+    $meta = [
+        'title' => 'Edit Business Card - QrBizID',
+        'description' => 'Edit and update your digital business card details with QrBizID. Keep your online presence up-to-date.',
+    ];
+@endphp
+<x-layout :meta="$meta">
     <main class="pt-32 bg-white dark:bg-gray-900 flex flex-col items-center justify-center">
         <header class="text-center">
             <h1 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
