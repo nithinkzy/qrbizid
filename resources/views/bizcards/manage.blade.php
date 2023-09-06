@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :title="'QrBizID - Empower Your dafdf with QR'">
     <div class="h-screen pt-52 bg-white dark:bg-gray-900 flex flex-col items-center justify-center ">
 
         <header class="text-center  font-bold tracking-tight text-gray-900 dark:text-white">
