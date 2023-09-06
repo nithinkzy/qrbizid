@@ -6,9 +6,7 @@
     <div class="flex flex-col justify-evenly">
         <div class="flex gap-3 items-center mb-2 lg:mb-5" id="logo-section">
             @if ($listing->logo)
-                {
-                <img class="block  h-10 w-10 rounded-full" src="{{ $listing->logo }}" alt="" />
-                }
+                <img class="block  h-10 w-10 rounded-full" src="{{ asset('storage/' . $listing->logo) }}" alt="" />
             @endif
             <div class="grid grid-rows-2" id="company-name">
                 <p class="text-[9px] sm:text-lg text-bold">{{ $listing->business_name }}</p>
