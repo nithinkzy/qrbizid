@@ -31,7 +31,8 @@
                     <div class="mb-6">
                         <label for="business_name" class="inline-block text-lg mb-2">Company Name</label>
                         <input type="text" class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
-                            name="business_name" value="{{ $listing->business_name }}" />
+                            name="business_name"
+                            value="{{ $listing->business_name ? $listing->business_name : old('business_name') }}" />
                         @error('business_name')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
@@ -39,7 +40,7 @@
 
                     <div class="mb-6">
                         <label for="tagline" class="inline-block text-lg mb-2">Company tagline</label>
-                        <input value="{{ $listing->tagline }}" type="text"
+                        <input value="{{ $listing->tagline ? $listing->tagline : old('tagline') }}" type="text"
                             class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="tagline"
                             placeholder="" />
                         @error('tagline')
@@ -52,7 +53,7 @@
                             Website/Application URL
                         </label>
                         <input type="text"
-                            value="{{ $listing->website }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->website ? $listing->website : old('website') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="website" />
                         @error('website')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -64,7 +65,7 @@
                             Address
                         </label>
                         <input type="text"
-                            value="{{ $listing->physical_address }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->physical_address ? $listing->physical_address : old('physical_address') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="physical_address" placeholder="" />
                         @error('physical_address')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -102,7 +103,7 @@
 
                     <div class="mb-6">
                         <label for="your_name" class="inline-block text-lg mb-2">Your Full Name</label>
-                        <input value="{{ $listing->your_name }}"type="text"
+                        <input value="{{ $listing->your_name ? $listing->your_name : old('your_name') }}"type="text"
                             class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="your_name"
                             placeholder="" />
                         @error('your_name')
@@ -112,7 +113,7 @@
 
                     <div class="mb-6">
                         <label for="job_title" class="inline-block text-lg mb-2">Job Title</label>
-                        <input value="{{ $listing->job_title }}"type="text"
+                        <input value="{{ $listing->job_title ? $listing->job_title : old('job_title') }}"type="text"
                             class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="job_title"
                             placeholder="" />
                         @error('job_title')
@@ -122,7 +123,7 @@
 
                     <div class="mb-6">
                         <label for="phone" class="inline-block text-lg mb-2">Phone Number</label>
-                        <input value="{{ $listing->phone }}"type="text"
+                        <input value="{{ $listing->phone ? $listing->phone : old('phone') }}"type="text"
                             class="text-black font-semibold border border-gray-200 rounded p-2 w-full" name="phone"
                             placeholder="Example: +91-xxxxxxx" />
                         @error('phone')
@@ -133,7 +134,7 @@
                     <div class="mb-6">
                         <label for="email" class="inline-block text-lg mb-2">Contact Email</label>
                         <input type="text"
-                            value="{{ $listing->email }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->email ? $listing->email : old('email') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="email" />
                         @error('email')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -153,7 +154,7 @@
                             Linkedin URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->linkedin }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->linkedin ? $listing->linkedin : old('linkedin') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="linkedin" placeholder="" />
                         @error('linkedin')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -165,7 +166,7 @@
                             Twitter URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->twitter }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->twitter ? $listing->twitter : old('twitter') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="twitter" placeholder="" />
                         @error('twitter')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -177,7 +178,7 @@
                             Facebook URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->facebook }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->facebook ? $listing->facebook : old('facebook') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="facebook" placeholder="" />
                         @error('facebook')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -189,7 +190,7 @@
                             Instagram URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->instagram }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->instagram ? $listing->instagram : old('instagram') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="instagram" placeholder="" />
                         @error('instagram')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -201,7 +202,7 @@
                             Youtube URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->youtube }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->youtube ? $listing->youtube : old('youtube') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="youtube" placeholder="" />
                         @error('youtube')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -213,7 +214,7 @@
                             Pinterest URL
                         </label>
                         <input type="url"
-                            value="{{ $listing->pinterest }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
+                            value="{{ $listing->pinterest ? $listing->pinterest : old('pinterest') }}"class="text-black font-semibold border border-gray-200 rounded p-2 w-full"
                             name="pinterest" placeholder="" />
                         @error('pinterest')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
