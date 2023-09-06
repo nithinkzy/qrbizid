@@ -32,11 +32,19 @@ class BusinessCardController extends Controller
      * @param  \App\Models\Business_Card  $business_Card
      * @return \Illuminate\Http\Response
      */
-    public function show(Business_Card $business_Card)
+    public function show($unique_id)
     {
-        return view('bizcards.show', [
-            'listing' => $business_Card
-        ]);
+        // Find the business card by unique_id
+        $businessCard = Business_Card::where('unique_id', $unique_id)->first();
+
+        // Check if the business card was found
+        if (!$businessCard) {
+            // Handle the case when the business card is not found (e.g., show a 404 page)
+            abort(404);
+        }
+
+        // Pass the business card data to the 'show' view
+        return view('bizcards.show', ['listing' => $businessCard]);
     }
 
     /**

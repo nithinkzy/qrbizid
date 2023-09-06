@@ -76,7 +76,7 @@
                 <a href="{{ asset('storage/' . $listing->document) }}" download
                     class="h-10 px-6 font-semibold rounded-md bg-black text-white flex items-center">
                     Document</a>
-                <a href="{{ route('download.vcard', ['business_Card' => $listing->id]) }}" download
+                <a href="" download
                     class="h-10 px-6 font-semibold rounded-md bg-black text-white flex items-center">
                     Save Contacts</a>
                 {{-- <a target="_blank" href="http://maps.google.com/?q={{ $listing->physical_address }}" download

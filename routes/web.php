@@ -43,7 +43,7 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->mid
 Route::get('/my-account', [BusinessCardController::class, 'manage'])->middleware('auth');
 
 // Single Listing
-Route::get('/bizcard/{business_Card}', [BusinessCardController::class, 'show']);
+Route::get('/bizcard/{unique_id}', [BusinessCardController::class, 'show']);
 
 // Show register create form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');

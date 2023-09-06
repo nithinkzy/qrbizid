@@ -22,7 +22,7 @@
                 @foreach ($listings as $listing)
                     <div class="flex flex-col">
 
-                        <a class="hover:scale-105 transition-all" href="/bizcard/{{ $listing->id }}">
+                        <a class="hover:scale-105 transition-all" href="/bizcard/{{ $listing->unique_id }}">
                             <x-biz-card :listing="$listing" />
                         </a>
                         <div class="flex justify-evenly mt-4">
