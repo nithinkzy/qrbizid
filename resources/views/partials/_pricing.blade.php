@@ -147,7 +147,7 @@
                              networking needs</span>
                      </li>
                  </ul>
-                 <a href="mailto:support@qrbizid.com"
+                 <a href="mailto:support@qrbizid.com?subject=Pricing Inquiry&body=Hello QrBizID Team,%0D%0A%0D%0AI have some questions about your pricing and would like to inquire about:%0D%0A%0D%0A- [Your Pricing Questions]%0D%0A%0D%0APlease provide me with more information. Thank you."
                      class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900">Contact
                      : support@qrbizid.com</a>
              </div>
